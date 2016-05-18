@@ -153,3 +153,4 @@ function initAutocomplete() {
   autocomplete.addListener("place_changed", getCoord);
     $("#autocomplete").val("");
 }
+$("#autocomplete").focus(initAutocomplete());
