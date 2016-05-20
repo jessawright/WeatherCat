@@ -1,6 +1,17 @@
+html,
+body {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+html {
+  height: 100%;
+  min-height: fit-content;
+}
 body {
     /* chroma green for before other images have loaded */
     background-color: #00b140;
+  height: 100%;
 }
 .weather-background {
     background-size: cover;
@@ -21,26 +32,28 @@ ul,
 li,
 footer,
 h2 small,
-input {
+input,
+span {
     margin: 0;
     padding: 0;
     border: 0;
     color: #4D2A0A;
     font-family: "Varela Round", "Arial Rounded MT Bold", Arial, sans-serif;
 }
-
 .container-fluid {
     padding: 0;
 }
 h1 {
-    margin: 1.5rem 0 1.5rem 0;
+    margin: 1.5rem auto;
     padding: 1rem;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, .5);
     max-width: fit-content;
 }
 h2 {
-    margin: .5em 0 .5em 0;
+    margin: .3em 0;
+    ;
+    font-size: 4rem;
 }
 #temperature {
     font-size: 4rem;
@@ -48,10 +61,16 @@ h2 {
 h3 {
     margin: .25em 0 .25em 0;
 }
-
 .weather-display-full {
     width: fit-content;
     height: fit-content;
+    position: relative;
+    text-align: center;
+}
+.weather-display-container {
+    display: inline-block;
+    margin: 0 auto 0 auto;
+    vertical-align: top;
 }
 .weather-display {
     background-color: rgba(255, 255, 255, .5);
@@ -59,16 +78,8 @@ h3 {
     height: 100%;
     border-radius: 5px;
     padding: 1rem;
-    margin: .5rem auto 1.5rem auto;
+    margin: 1rem;
     border: 0;
-}
-@media screen and (min-width: 768px) {
-    .weather-display {
-        width: fit-content;
-        margin: .5rem .5rem 1rem .5rem;
-        display: inline-block;
-        vertical-align: top;
-    }
 }
 .btn {
     background-color: rgba(255, 255, 255, .5);
@@ -99,15 +110,33 @@ input {
     border: none;
     box-shadow: none;
     color: #4D2A0A;
-    margin: .25em auto .25em auto;
+    margin: .25em auto .5em auto;
     border-radius: 4px;
     padding: 0 .5em 0 .5em;
     width: 15em;
+    padding: 6px 12px;
+    font-family: "fontawesome", "Varela Round", "Arial Rounded MT Bold", Arial, sans-serif;
+    font-size: 14px;
 }
-
-
+input:focus,
+input:hover {
+    background-color: rgba(255, 255, 255, .8);
+    outline: none;
+}
+.pac-container {
+    border-radius: 4px;
+    box-shadow: none;
+}
+.pac-item,
+.pac-item-query,
+.pac-matched {
+    color: #4D2A0A;
+}
+.pac-icon {
+    display: none;
+}
 .pusheen {
-    margin-bottom: -35px;
+    margin-bottom: -80px;
     width: 261px;
     height: 372px;
     position: relative;
@@ -118,11 +147,23 @@ input {
     margin-top: 0;
     position: relative;
     z-index: -1;
-    padding: 3em;
+    padding: 60px 0 9999px 0;
+    background-image: linear-gradient(blue, blue 10px, red 10px, red 20px, black 20px);
+  margin-bottom: -9999px;
+  overflow: hidden;
 }
 .credits {
     color: #4D2A0A;
     padding: .5em;
+  margin: 2em;
     background-color: rgba(255, 255, 255, .3);
     border-radius: 5px;
 }
+
+/*
+This is essentially what needs to be added into the js for the background ground images to fill the rest of the box with the color.
+
+    background-image: linear-gradient(
+        transparent 100px,
+    #1A812 100px);
+*/

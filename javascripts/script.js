@@ -26,18 +26,19 @@ function filterOutNone(val) {
     return false;
   }
 };
-/* Convert keywords to pngs */
+/* Convert keywords to pngs and colors */
 function getPusheenImages(weatherCodeConditions) {
   $.getJSON("javascripts/weatherPNGJSON.js", function(pusheenImages) {
     var imageList = {};
     var keysArray = Object.keys(weatherCodeConditions);
     keysArray.forEach(function(element) {
       imageList[element] = weatherCodeConditions[element].map(function(val) {
-        return " url(\"" + pusheenImages[val] +"\")";
+        return " url(\"" + pusheenImages[val] + "\")";
       });
+      console.log(imageList["background"][(imageList["background"].length)-1]);
       imageList[element] = imageList[element].toString();
     });
-    
+
     console.log(imageList);
     showPusheenImages(imageList);
   })
@@ -45,8 +46,8 @@ function getPusheenImages(weatherCodeConditions) {
 /* Function to show Pusheen images*/
 function showPusheenImages(imageList) {
   $(".weather-background").css({
-      "background-image": imageList["background"],
-      "background-repeat": "no-repeat"
+    "background-image": imageList["background"],
+    "background-repeat": "no-repeat"
   });
   $(".pusheen").append("<div class=\"pusheen-accessories center-block\"></div>");
   $(".pusheen-accessories").css({
@@ -75,7 +76,7 @@ function displayWeatherImages(weatherJSON) {
     } else {
       $("#time").attr("data_daynight", "night")
     };
-  
+
     for (i = 3; i < 8; i++) {
       if (weatherCodeConditions["background"][i] !== "none" && i !== 5) {
         weatherCodeConditions["background"][i] = weatherCodeConditions["background"][i] + $("#time").attr("data_daynight");
@@ -144,13 +145,15 @@ $("#currentposition").click(function() {
 function getCoord() {
   var place = autocomplete.getPlace();
   var weatherFromGoogleURL = "http://api.openweathermap.org/data/2.5/weather?lat=" + place.geometry.location.lat() + "&lon=" + place.geometry.location.lng() + "&units=imperial&appid=05848becfd609da39aaf8d8da59363cd";
+  $("#autocomplete").val("");
   showWeather(weatherFromGoogleURL);
-   }
+}
 /* Fuction to search for locations using Google Places autocomplete */
 function initAutocomplete() {
-  autocomplete = new google.maps.places.Autocomplete((document.getElementById("autocomplete")),
-            {types: ["(regions)"]});
+  autocomplete = new google.maps.places.Autocomplete((document.getElementById("autocomplete")), {
+    types: ["(regions)"]
+  });
   autocomplete.addListener("place_changed", getCoord);
-    $("#autocomplete").val("");
+
 }
 $("#autocomplete").focus(initAutocomplete());

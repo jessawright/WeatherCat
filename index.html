@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<!-- 
+testing my github understanding some more and even more now, yes
+-->
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>Professor Pusheen Q. WeatherCat</title>
@@ -8,6 +12,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="stylesheets/style.css">
+    <!-- 
+I put this google autocomplete script here because it didn't work when I had it as the first script at the bottom of the body. I don't know why that is, but it seems to work reliably now. I think it might be a timing thing, but I want to make sure I understand it.
+-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-u6ekqy61N9u94kL7va_T0CiEO-pBhxU&libraries=places"></script>
 
 
@@ -16,19 +23,24 @@
 
 <body class="weather-background">
     <div class="container-fluid">
+        
         <h1 class="text-center center-block">Professor Pusheen Q. WeatherCat</h1>
+      
         <div class="weather-display-full center-block">
-            <div class="weather-display temp-description center-block">
-                <h3 class="text-center">Current Conditions:</h3>
-                <h2 class="text-center"><button id="temperature" class="btn temp-button" type="button">...</button></h2>
-                <h3 id="description" class="text-center">...</h3>
+            <div class="weather-display-container">
+                <div class="weather-display temp-description center-block">
+                    <h3 class="text-center">Current Conditions:</h3>
+                    <h2 class="text-center"><button id="temperature" class="btn temp-button" type="button">...</button></h2>
+                    <h3 id="description" class="text-center">...</h3>
+                </div>
             </div>
-
-            <div class="weather-display time-position center-block">
-                <h4 id="time" class="text-center">...</h4>
-                <h2 id="position" class="text-center">...</h2>
-                <input class="center-block" id="autocomplete" placeholder="search for a location" type="text"></input>
-                <button id="currentposition" class="btn center-block">Use current location</button>
+            <div class="weather-display-container">
+                <div class="weather-display time-position center-block">
+                    <h4 id="time" class="text-center">...</h4>
+                    <h2 id="position" class="text-center">...</h2>
+                    <input class="center-block" id="autocomplete" placeholder="&#xf002; search for a location" type="text"></input>
+                    <button id="currentposition" class="btn center-block">Use current location</button>
+                </div>
             </div>
         </div>
         <div class="pusheen center-block"></div>
@@ -41,4 +53,5 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.12.0/moment.min.js" type="text/javascript"></script>
 <script src="javascripts/script.js" type="text/javascript"></script>
+
 </html>
