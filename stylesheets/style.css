@@ -148,7 +148,7 @@ input:hover {
     position: relative;
     z-index: -1;
     padding: 60px 0 9999px 0;
-    background-image: linear-gradient(blue, blue 10px, red 10px, red 20px, black 20px);
+    
   margin-bottom: -9999px;
   overflow: hidden;
 }
