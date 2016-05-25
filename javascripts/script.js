@@ -29,15 +29,28 @@ function filterOutNone(val) {
 /* Convert keywords to pngs and colors */
 function getPusheenImages(weatherCodeConditions) {
   $.getJSON("javascripts/weatherPNGJSON.js", function(pusheenImages) {
-    var imageList = {};
+    
     var keysArray = Object.keys(weatherCodeConditions);
+    var imageList = {};
     keysArray.forEach(function(element) {
       imageList[element] = weatherCodeConditions[element].map(function(val) {
-        return " url(\"" + pusheenImages[val] + "\")";
+        return pusheenImages[val];
       });
-      console.log(imageList["background"][(imageList["background"].length)-1]);
+    });
+    var backgroundColor = imageList["background"].pop();
+    keysArray.forEach(function(element) {
+      imageList[element] = imageList[element].map(function(val) {
+        return " url(\"" + val + "\")";
+      });
       imageList[element] = imageList[element].toString();
     });
+    imageList["background"] = imageList["background"].concat(" " + backgroundColor);
+    if (weatherCodeConditions["ground"] == "snow") {
+      imageList["ground"] = imageList["ground"].concat(", linear-gradient(transparent 98px, white 98px);")
+    } else {
+      imageList["ground"] = imageList["ground"].concat(", linear-gradient(transparent 98px, #1CA812 98px)")
+    };
+    
 
     console.log(imageList);
     showPusheenImages(imageList);
@@ -46,7 +59,7 @@ function getPusheenImages(weatherCodeConditions) {
 /* Function to show Pusheen images*/
 function showPusheenImages(imageList) {
   $(".weather-background").css({
-    "background-image": imageList["background"],
+    "background": imageList["background"],
     "background-repeat": "no-repeat"
   });
   $(".pusheen").append("<div class=\"pusheen-accessories center-block\"></div>");
@@ -61,8 +74,14 @@ function showPusheenImages(imageList) {
     "z-index": "2"
   })
   $(".ground-background").css({
+    "background-repeat": "no-repeat",
     "background-image": imageList["ground"],
-    "background-repeat": "no-repeat"
+    "margin-top": "0",
+    "position": "relative",
+    "z-index": "-1",
+    "padding": "60px 0 9999px 0",
+    "margin-bottom": "-9999px",
+    "overflow": "hidden"
   });
 
 }
