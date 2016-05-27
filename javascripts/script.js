@@ -51,9 +51,9 @@ function showPusheenImages(imageList) {
         "background-repeat": "no-repeat",
         "background-image": imageList.ground,
         "margin-top": "0",
-        "position": "relative",
-        "padding": "60px 0 9999px 0",
-        "margin-bottom": "-9999px",
+        "position": "absolute",
+        "padding": "60px 0 0 0",
+        "height": "100%",
         "overflow": "hidden"
     });
 }
