@@ -5,13 +5,13 @@ body {
     overflow-x: hidden;
 }
 html {
-  height: 100%;
-  min-height: fit-content;
+    height: 100%;
+    min-height: fit-content;
 }
 body {
     /* chroma green for before other images have loaded */
     background-color: #00b140;
-  height: 100%;
+    height: 100%;
 }
 .weather-background {
     background-size: cover;
@@ -40,6 +40,9 @@ span {
     color: #4D2A0A;
     font-family: "Varela Round", "Arial Rounded MT Bold", Arial, sans-serif;
 }
+a {
+    text-decoration: underline;
+}
 .container-fluid {
     padding: 0;
 }
@@ -52,7 +55,6 @@ h1 {
 }
 h2 {
     margin: .3em 0;
-    ;
     font-size: 4rem;
 }
 #temperature {
@@ -148,14 +150,13 @@ input:hover {
     position: relative;
     z-index: -1;
     padding: 60px 0 9999px 0;
-    
-  margin-bottom: -9999px;
-  overflow: hidden;
+    margin-bottom: -9999px;
+    overflow: hidden;
 }
 .credits {
     color: #4D2A0A;
     padding: .5em;
-  margin: 2em;
+    margin: 2em;
     background-color: rgba(255, 255, 255, .3);
     border-radius: 5px;
 }
