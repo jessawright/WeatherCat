@@ -50,11 +50,12 @@ function showPusheenImages(imageList) {
     $(".ground-background").css({
         "background-repeat": "no-repeat",
         "background-image": imageList.ground,
-        "margin-top": "0",
-        "position": "absolute",
-        "padding": "60px 0 0 0",
-        "height": "100%",
-        "overflow": "hidden"
+        "margin": "0 0 -9999px 0",
+        "position": "relative",
+        "padding": "60px 0 9999px 0",
+        "overflow": "hidden",
+      
+     
     });
 }
 /* Convert keywords to pngs and colors */
@@ -75,10 +76,13 @@ function getPusheenImages(weatherCodeConditions) {
             imageList[element] = imageList[element].toString();
         });
         imageList.background = imageList.background.concat(" " + backgroundColor);
+      var borderColor; 
         if (weatherCodeConditions.ground === "snow") {
             imageList.ground = imageList.ground.concat(", linear-gradient(transparent 98px, #F8F8F8 98px)");
+          
         } else {
             imageList.ground = imageList.ground.concat(", linear-gradient(transparent 98px, #3E8539 98px)");
+          
         }
         showPusheenImages(imageList);
     });
