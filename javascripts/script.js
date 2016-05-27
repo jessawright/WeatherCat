@@ -45,14 +45,13 @@ function showPusheenImages(imageList) {
         "bottom": "0px",
         "width": "261px",
         "height": "372px",
-        "z-index": "2"
+        "z-index": "3"
     });
     $(".ground-background").css({
         "background-repeat": "no-repeat",
         "background-image": imageList.ground,
         "margin-top": "0",
         "position": "relative",
-        "z-index": "-1",
         "padding": "60px 0 9999px 0",
         "margin-bottom": "-9999px",
         "overflow": "hidden"
