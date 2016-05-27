@@ -40,8 +40,13 @@ span {
     color: #4D2A0A;
     font-family: "Varela Round", "Arial Rounded MT Bold", Arial, sans-serif;
 }
-a {
-    text-decoration: underline;
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+  color: #4D2A0A;
+  font-weight: bold;
 }
 .container-fluid {
     padding: 0;
@@ -134,6 +139,10 @@ input:hover {
 .pac-matched {
     color: #4D2A0A;
 }
+.pac-item-selected,
+.pac-item-selected:hover {
+  background-color: #FAFAFA;
+}
 .pac-icon {
     display: none;
 }
@@ -144,11 +153,11 @@ input:hover {
     position: relative;
     background-image: url("http://res.cloudinary.com/jessawright/image/upload/v1462063480/Pusheen/pusheen_herself.png");
     background-repeat: no-repeat;
+  z-index: 2;
 }
 .ground-background {
     margin-top: 0;
     position: relative;
-    z-index: -1;
     padding: 60px 0 9999px 0;
     margin-bottom: -9999px;
     overflow: hidden;
@@ -161,10 +170,3 @@ input:hover {
     border-radius: 5px;
 }
 
-/*
-This is essentially what needs to be added into the js for the background ground images to fill the rest of the box with the color.
-
-    background-image: linear-gradient(
-        transparent 100px,
-    #1A812 100px);
-*/
