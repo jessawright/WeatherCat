@@ -50,9 +50,9 @@ function showPusheenImages(imageList) {
     $(".ground-background").css({
         "background-repeat": "no-repeat",
         "background-image": imageList.ground,
-        "margin": "0",
+        "margin": "0 0 -9999px 0",
         "position": "relative",
-        "padding-top": "60px",
+        "padding": "60px 0 9999px 0",
         "overflow": "hidden",
       
      
