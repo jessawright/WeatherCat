@@ -7,11 +7,13 @@ body {
 html {
     height: 100%;
     min-height: fit-content;
+
 }
 body {
     /* chroma green for before other images have loaded */
     background-color: #00b140;
     height: 100%;
+
 }
 .weather-background {
     background-size: cover;
@@ -49,7 +51,8 @@ a:active {
   font-weight: bold;
 }
 .container-fluid {
-    padding: 0;
+    height: 100%;
+  padding: 0;
 }
 h1 {
     margin: 1.5rem auto;
@@ -158,9 +161,14 @@ input:hover {
 .ground-background {
     margin-top: 0;
     position: relative;
-    padding: 60px 0 9999px 0;
-    margin-bottom: -9999px;
+    padding: 60px 0 0 0;
     overflow: hidden;
+
+}
+.fill {
+  height: 100%;
+  margin: 0;
+
 }
 .credits {
     color: #4D2A0A;
@@ -168,5 +176,6 @@ input:hover {
     margin: 2em;
     background-color: rgba(255, 255, 255, .3);
     border-radius: 5px;
+
 }
 
