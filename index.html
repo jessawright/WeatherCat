@@ -2,49 +2,43 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>Professor Pusheen Q. WeatherCat</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="stylesheets/style.css">
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-u6ekqy61N9u94kL7va_T0CiEO-pBhxU&libraries=places"></script>
+    <meta charset="utf-8">
+    <title>Professor Pusheen Q. WeatherCat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-u6ekqy61N9u94kL7va_T0CiEO-pBhxU&libraries=places"></script>
 </head>
 
 <body class="weather-background">
-  <div class="container-fluid">
-
-      
-    
-    <h1 class="text-center center-block header">Professor Pusheen Q. WeatherCat</h1>
-    <div class="weather-display-full center-block">
-      <div class="weather-display-container">
-        <div class="weather-display temp-description center-block">
-          <h3 class="text-center">Current Conditions:</h3>
-          <h2 class="text-center"><button id="temperature" class="btn temp-button" type="button">...</button></h2>
-          <h3 id="description" class="text-center">...</h3>
+    <div class="container-fluid">
+        <h1 class="text-center center-block header">Professor Pusheen Q. WeatherCat</h1>
+        <div class="weather-display-full center-block">
+            <div class="weather-display-container">
+                <div class="weather-display temp-description center-block">
+                    <h3 class="text-center">Current Conditions:</h3>
+                    <h2 class="text-center"><button id="temperature" class="btn temp-button" type="button">...</button></h2>
+                    <h3 id="description" class="text-center">...</h3>
+                </div>
+            </div>
+            <div class="weather-display-container">
+                <div class="weather-display time-position center-block">
+                    <h4 id="time" class="text-center">...</h4>
+                    <h2 id="position" class="text-center">...</h2>
+                    <input class="center-block" id="autocomplete" placeholder="&#xf002; search for a location" type="text"></input>
+                    <button id="currentposition" class="btn center-block">Use current location</button>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="weather-display-container">
-        <div class="weather-display time-position center-block">
-          <h4 id="time" class="text-center">...</h4>
-          <h2 id="position" class="text-center">...</h2>
-          <input class="center-block" id="autocomplete" placeholder="&#xf002; search for a location" type="text"></input>
-          <button id="currentposition" class="btn center-block">Use current location</button>
-        </div>
-      </div>
+        <div class="pusheen center-block"></div>
+        <footer class="footer-container">
+            <div class="ground-background">
+                <p class="credits">Weather information from OpenWeatherMap. Location search information from Google Maps. Pusheen is a creation of Pusheen.com. Original illustrations by Pusheen.com. Pusheen illustration remixing, original illustrations, design, and code by <a href="http://www.jessawright.com">Jessa Wright</a>. Source code and more information at <a href="https://www.github.com/jessawright/weather-cat">Github</a>.</p>
+            </div>
+        </footer>
     </div>
-    <div class="pusheen center-block"></div>
-
-    <footer class="ground-background">
-      <p class="credits">Weather information from OpenWeatherMap. Location search information from Google Maps. Pusheen is a creation of Pusheen.com. Original illustrations by Pusheen.com. Pusheen illustration remixing, original illustrations, design, and code by <a href="http://www.jessawright.com">Jessa Wright</a>.
-        Source code and more information at <a href="https://www.github.com/jessawright/weather-cat">Github</a>.</p>
-      <div class="fill">
-        
-      </div>
-    </footer>
-  </div>
 
 
 
