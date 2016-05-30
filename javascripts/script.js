@@ -52,11 +52,18 @@ function showPusheenImages(imageList) {
         "background-image": imageList.ground,
         "margin": "0",
         "position": "relative",
+        "bottom": "0",
         "padding-top": "60px",
-        "overflow": "hidden",
-      
-     
     });
+
+    if ($("html").height() < $(".container-fluid").height()) {
+        $(".ground-background").css({
+            "border-bottom": "9999px solid yellow",
+        });
+        $("body").css({
+            "overflow": "hidden",
+        });
+    }
 }
 /* Convert keywords to pngs and colors */
 function getPusheenImages(weatherCodeConditions) {
@@ -75,15 +82,15 @@ function getPusheenImages(weatherCodeConditions) {
             });
             imageList[element] = imageList[element].toString();
         });
-        imageList.background = imageList.background.concat(" " + backgroundColor);
-      var borderColor; 
+        var footerFill = $(".header").height() + $(".weather-display-full").height() + $(".pusheen").height() + 60;
+        var borderColor;
         if (weatherCodeConditions.ground === "snow") {
-            imageList.ground = imageList.ground.concat(", linear-gradient(transparent 98px, #F8F8F8 98px)");
-          
+            borderColor = "#F8F8F8";
         } else {
-            imageList.ground = imageList.ground.concat(", linear-gradient(transparent 98px, #3E8539 98px)");
-          
+            borderColor = "#3E8539";
         }
+        imageList.background = imageList.background.concat(" , linear-gradient(" + backgroundColor + " " + footerFill + "px, " + borderColor + " " + footerFill + "px)");
+        imageList.ground = imageList.ground.concat(", linear-gradient(transparent 98px, " + borderColor + " 98px)");
         showPusheenImages(imageList);
     });
 }
