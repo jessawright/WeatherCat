@@ -35,7 +35,7 @@ function showPusheenImages(imageList) {
     $(".weather-background").css({
         "background": imageList.background,
         "background-repeat": "no-repeat",
-        "background-attachment": "scroll",
+        "background-attachment": "fixed",
     });
     $(".pusheen").append("<div class=\"pusheen-accessories center-block\"></div>");
     $(".pusheen-accessories").css({
@@ -57,7 +57,12 @@ function showPusheenImages(imageList) {
         "padding-top": "60px",
 
     });
-    }
+    $(".credits-container").css({
+        "border-bottom-color": borderColor,
+        "border-bottom-width": "2em",
+        "border-bottom-style": "solid",
+    });
+}
 
 /* Convert keywords to pngs and colors */
 function getPusheenImages(weatherCodeConditions) {
@@ -76,7 +81,7 @@ function getPusheenImages(weatherCodeConditions) {
             });
             imageList[element] = imageList[element].toString();
         });
-        var footerFill = $(".header").height() + $(".weather-display-full").height() + $(".pusheen").height() + 60;
+        var footerFill = $(".header").height() + $(".weather-display-full").height() + $(".pusheen").height() + $("footer").height();
         var borderColor;
         if (weatherCodeConditions.ground === "snow") {
             borderColor = "#F8F8F8";
@@ -84,7 +89,7 @@ function getPusheenImages(weatherCodeConditions) {
             borderColor = "#3E8539";
         }
         imageList.background = imageList.background.concat(" , linear-gradient(" + backgroundColor + " " + footerFill + "px, " + borderColor + " " + footerFill + "px)");
-        /*imageList.ground = imageList.ground.concat(", linear-gradient(transparent 98px, " + borderColor + " 98px)");*/
+        imageList.ground = imageList.ground.concat(", linear-gradient(transparent 98px, " + borderColor + " 98px)");
         showPusheenImages(imageList);
     });
 }
