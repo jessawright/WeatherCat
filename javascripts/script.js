@@ -55,16 +55,7 @@ function showPusheenImages(imageList) {
         "bottom": "0",
         "padding-top": "60px",
     });
-
-    if ($("html").height() < $(".container-fluid").height()) {
-        $(".ground-background").css({
-            "border-bottom": "9999px solid yellow",
-        });
-        $("body").css({
-            "overflow": "hidden",
-        });
     }
-}
 /* Convert keywords to pngs and colors */
 function getPusheenImages(weatherCodeConditions) {
     $.getJSON("javascripts/weatherPNGJSON.js", function (pusheenImages) {
