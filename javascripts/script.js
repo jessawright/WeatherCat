@@ -50,12 +50,14 @@ function showPusheenImages(imageList) {
     $(".ground-background").css({
         "background-repeat": "no-repeat",
         "background-image": imageList.ground,
-        "margin": "0",
+        "margin": "0 0 -9999px 0",
         "position": "relative",
         "bottom": "0",
         "padding-top": "60px",
+
     });
     }
+
 /* Convert keywords to pngs and colors */
 function getPusheenImages(weatherCodeConditions) {
     $.getJSON("javascripts/weatherPNGJSON.js", function (pusheenImages) {
