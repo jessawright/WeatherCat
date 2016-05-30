@@ -34,7 +34,8 @@ function filterOutNone(val) {
 function showPusheenImages(imageList) {
     $(".weather-background").css({
         "background": imageList.background,
-        "background-repeat": "no-repeat"
+        "background-repeat": "no-repeat",
+        "background-attachment": "scroll",
     });
     $(".pusheen").append("<div class=\"pusheen-accessories center-block\"></div>");
     $(".pusheen-accessories").css({
@@ -50,7 +51,7 @@ function showPusheenImages(imageList) {
     $(".ground-background").css({
         "background-repeat": "no-repeat",
         "background-image": imageList.ground,
-        "margin": "0 0 -9999px 0",
+        "margin": "0",
         "position": "relative",
         "bottom": "0",
         "padding-top": "60px",
@@ -83,7 +84,7 @@ function getPusheenImages(weatherCodeConditions) {
             borderColor = "#3E8539";
         }
         imageList.background = imageList.background.concat(" , linear-gradient(" + backgroundColor + " " + footerFill + "px, " + borderColor + " " + footerFill + "px)");
-        imageList.ground = imageList.ground.concat(", linear-gradient(transparent 98px, " + borderColor + " 98px)");
+        /*imageList.ground = imageList.ground.concat(", linear-gradient(transparent 98px, " + borderColor + " 98px)");*/
         showPusheenImages(imageList);
     });
 }
