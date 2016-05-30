@@ -7,11 +7,13 @@ body {
 html {
     height: 100%;
     min-height: fit-content;
+
 }
 body {
     /* chroma green for before other images have loaded */
     background-color: #00b140;
     height: 100%;
+
 }
 .weather-background {
     background-size: cover;
@@ -45,12 +47,12 @@ a:hover,
 a:focus,
 a:active {
     text-decoration: none;
-    color: #4D2A0A;
-    font-weight: bold;
+  color: #4D2A0A;
+  font-weight: bold;
 }
 .container-fluid {
     height: 100%;
-    padding: 0;
+  padding: 0;
 }
 h1 {
     margin: 1.5rem auto;
@@ -142,7 +144,7 @@ input:hover {
 }
 .pac-item-selected,
 .pac-item-selected:hover {
-    background-color: #FAFAFA;
+  background-color: #FAFAFA;
 }
 .pac-icon {
     display: none;
@@ -154,18 +156,20 @@ input:hover {
     position: relative;
     background-image: url("http://res.cloudinary.com/jessawright/image/upload/v1462063480/Pusheen/pusheen_herself.png");
     background-repeat: no-repeat;
-    z-index: 2;
-}
-.footer-container {
-    position: relative;
-    overflow: hidden;
+  z-index: 2;
 }
 .ground-background {
     margin-top: 0;
     position: relative;
-    bottom: 0;
+
     padding: 60px 0 0 0;
     overflow: hidden;
+
+}
+.fill {
+  height: 100%;
+  margin: 0;
+
 }
 .credits {
     color: #4D2A0A;
@@ -173,4 +177,6 @@ input:hover {
     margin: 2em;
     background-color: rgba(255, 255, 255, .3);
     border-radius: 5px;
+
 }
+
