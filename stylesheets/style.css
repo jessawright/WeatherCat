@@ -156,14 +156,13 @@ input:hover {
     position: relative;
     background-image: url("http://res.cloudinary.com/jessawright/image/upload/v1462063480/Pusheen/pusheen_herself.png");
     background-repeat: no-repeat;
+
   z-index: 2;
+
 }
 .ground-background {
     margin-top: 0;
     position: relative;
-
-    padding: 60px 0 0 0;
-    overflow: hidden;
 
 }
 .fill {
