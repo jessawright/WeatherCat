@@ -1,0 +1,177 @@
+html,
+body {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+html {
+    height: 100%;
+}
+body {
+    /* chroma green for before other images have loaded */
+    background-color: #00b140;
+    height: 100%;
+    min-height: fit-content;
+}
+.weather-background {
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+a,
+button,
+input,
+ul,
+li,
+footer,
+h2 small,
+input,
+span {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: #4D2A0A;
+    font-family: "Varela Round", "Arial Rounded MT Bold", Arial, sans-serif;
+}
+a,
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+    color: #4D2A0A;
+    font-weight: bold;
+}
+.container-fluid {
+    padding: 0;
+}
+h1 {
+    margin: 1.5rem auto;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, .5);
+    max-width: fit-content;
+}
+h2 {
+    margin: .3em 0;
+    font-size: 4rem;
+}
+#temperature {
+    font-size: 4rem;
+}
+h3 {
+    margin: .25em 0 .25em 0;
+}
+.weather-display-full {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    text-align: center;
+}
+.weather-display-container {
+    display: inline-block;
+    margin: 0 auto 0 auto;
+    vertical-align: top;
+}
+.weather-display {
+    background-color: rgba(255, 255, 255, .5);
+    width: fit-content;
+    height: 100%;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem;
+    border: 0;
+}
+.btn {
+    background-color: rgba(255, 255, 255, .5);
+}
+.btn:hover,
+.btn:active:focus,
+.btn:active,
+.btn:hover,
+.btn:focus {
+    background-color: rgba(255, 255, 255, .8);
+}
+.btn,
+.btn:active:focus,
+.btn:active,
+.btn:hover,
+.btn:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color: #4D2A0A;
+    margin: .25em auto .25em auto;
+}
+#currentposition {
+    width: 15em;
+}
+input {
+    background-color: rgba(255, 255, 255, .5);
+    border: none;
+    box-shadow: none;
+    color: #4D2A0A;
+    margin: .25em auto .5em auto;
+    border-radius: 4px;
+    padding: 0 .5em 0 .5em;
+    width: 15em;
+    padding: 6px 12px;
+    font-family: "fontawesome", "Varela Round", "Arial Rounded MT Bold", Arial, sans-serif;
+    font-size: 14px;
+}
+input:focus,
+input:hover {
+    background-color: rgba(255, 255, 255, .8);
+    outline: none;
+}
+.pac-container {
+    border-radius: 4px;
+    box-shadow: none;
+}
+.pac-item,
+.pac-item-query,
+.pac-matched {
+    color: #4D2A0A;
+}
+.pac-item-selected,
+.pac-item-selected:hover {
+    background-color: #FAFAFA;
+}
+.pac-icon {
+    display: none;
+}
+.pusheen {
+    margin-bottom: -80px;
+    width: 261px;
+    height: 372px;
+    position: relative;
+    background-image: url("http://res.cloudinary.com/jessawright/image/upload/v1462063480/Pusheen/pusheen_herself.png");
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+.ground-background {
+    margin-top: 0;
+    position: relative;
+    padding-top: 60px;
+}
+.fill {
+    height: 100%;
+    margin: 0;
+}
+.credits {
+    color: #4D2A0A;
+    padding: .5em;
+    margin: 2em;
+    background-color: rgba(255, 255, 255, .3);
+    border-radius: 5px;
+}
+.credits-container {
+    border-bottom: 1px solid transparent;
+}
