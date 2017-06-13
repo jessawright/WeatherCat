@@ -141,7 +141,7 @@ function showWeather(weatherURL) {
 }
 /* Function to show weather from browser geolocation */
 function browserSuccess(pos) {
-    var weatherFromGeolocationURL = "http://api.openweathermap.org/data/2.5/weather?lat=" + pos.coords.latitude + "&lon=" + pos.coords.longitude + "&units=imperial&appid=05848becfd609da39aaf8d8da59363cd";
+    var weatherFromGeolocationURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=" + pos.coords.latitude + "&lon=" + pos.coords.longitude + "&units=imperial&appid=05848becfd609da39aaf8d8da59363cd";
     showWeather(weatherFromGeolocationURL);
 }
 /* Error function for failures of browser geolocation */
@@ -169,7 +169,7 @@ $("#currentposition").click(function () {
 /* Function to show weather from google API search */
 function getCoord() {
     var place = autocomplete.getPlace();
-    var weatherFromGoogleURL = "http://api.openweathermap.org/data/2.5/weather?lat=" + place.geometry.location.lat() + "&lon=" + place.geometry.location.lng() + "&units=imperial&appid=05848becfd609da39aaf8d8da59363cd";
+    var weatherFromGoogleURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=" + place.geometry.location.lat() + "&lon=" + place.geometry.location.lng() + "&units=imperial&appid=05848becfd609da39aaf8d8da59363cd";
     $("#autocomplete").val("");
     showWeather(weatherFromGoogleURL);
 }
