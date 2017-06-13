@@ -35,7 +35,7 @@ function showPusheenImages(imageList) {
 	$(".weather-background").css({
 		"background": imageList.background,
 		"background-repeat": "no-repeat",
-		"background-attachment": "fixed",
+		"background-attachment": "local",
 	});
 	$(".pusheen").append("<div class=\"pusheen-accessories center-block\"></div>");
 	$(".pusheen-accessories").css({
@@ -141,13 +141,15 @@ function browserSuccess(pos) {
 	var weatherFromGeolocationURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=" + pos.coords.latitude + "&lon=" + pos.coords.longitude + "&units=imperial&appid=05848becfd609da39aaf8d8da59363cd";
 	showWeather(weatherFromGeolocationURL);
 }
-/* Error function for failures of browser geolocation */
+/* Error function for failures of browser geolocation, default to display Chicago weather */
 function error() {
-	window.alert("Professor WeatherCat could not find your position from your browser. Please enter a location manually.");
+  var defaultWeatherURL = "https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=41.8781&lon=-87.6298&units=imperial&appid=05848becfd609da39aaf8d8da59363cd";
+  showWeather(defaultWeatherURL);
+  window.alert("Professor WeatherCat could not find your position from your browser. Please enter a location manually. Here is the weather for Chicago.");
 }
 /* Get coord from browser upon load */
 $(document).ready(function() {
-	navigator.geolocation.getCurrentPosition(browserSuccess);
+	navigator.geolocation.getCurrentPosition(browserSuccess, error);
 });
 /* Temperature button - convert C/F */
 $("#temperature").click(function() {
