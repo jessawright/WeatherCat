@@ -1,5 +1,5 @@
-/* Hello friendly code-reader. I know that my API keys for OpenWeatherMap and Google Places are exposed here. Please don't steal them. You can get your own for free: 
-http://openweathermap.org/price  
+/* Hello friendly code-reader. I know that my API keys for OpenWeatherMap and Google Places are exposed here. Please don't steal them. You can get your own for free:
+http://openweathermap.org/price
 https://developers.google.com/maps/documentation/javascript/get-api-key */
 
 /* Function to convert timestamp using moment.js */
@@ -66,7 +66,7 @@ function showPusheenImages(imageList) {
 
 /* Convert keywords to pngs and colors */
 function getPusheenImages(weatherCodeConditions) {
-    $.getJSON("javascripts/weatherPNGJSON.js", function (pusheenImages) {
+    /*$.getJSON("javascripts/weatherPNGJSON.js", function (pusheenImages) { */
         var keysArray = Object.keys(weatherCodeConditions);
         var imageList = {};
         keysArray.forEach(function (element) {
@@ -93,13 +93,13 @@ function getPusheenImages(weatherCodeConditions) {
         imageList.ground = imageList.ground.concat(", linear-gradient(transparent 98px, " + borderColor + " 98px)");
         $(".weather-background").attr("borderColor", borderColor);
         showPusheenImages(imageList);
-    });
+    /* }); */
 }
 
 /* Function to convert weather data to imagery */
 function displayWeatherImages(weatherJSON) {
-    $.getJSON("javascripts/weatherCodeRefJSON.js", function (data) {
-        var weatherCodeConditions = data[$("#description").attr("data_code")];
+    /*$.getJSON("javascripts/weatherCodeRefJSON.js", function (data) { */
+        var weatherCodeConditions = weatherCodeRef[$("#description").attr("data_code")];
         if (weatherJSON.dt > weatherJSON.sys.sunrise && weatherJSON.dt < weatherJSON.sys.sunset) {
             $("#time").attr("data_daynight", "day");
         } else {
@@ -130,7 +130,7 @@ function displayWeatherImages(weatherJSON) {
         weatherCodeConditions.background = weatherCodeConditions.background.filter(filterOutNone);
         weatherCodeConditions.accessories = weatherCodeConditions.accessories.filter(filterOutNone);
         getPusheenImages(weatherCodeConditions);
-    });
+    /*}); */
 }
 /* Function to show weather */
 function showWeather(weatherURL) {

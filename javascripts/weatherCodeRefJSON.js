@@ -1,3 +1,4 @@
+var weatherCodeRef =
 {
     "200": {
         "background": [

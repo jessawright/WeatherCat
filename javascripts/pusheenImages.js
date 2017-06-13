@@ -1,3 +1,4 @@
+var pusheenImages =
 {
     "sSnow": "http://res.cloudinary.com/jessawright/image/upload/v1462063483/Pusheen/sSnow.png",
     "mSnow": "http://res.cloudinary.com/jessawright/image/upload/v1462063481/Pusheen/mSnow.png",
