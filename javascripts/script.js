@@ -107,7 +107,7 @@ function displayWeatherImages(weatherJSON) {
 			weatherCodeConditions.background[i] = weatherCodeConditions.background[i] + $("#time").attr("data_daynight");
 		}
 	}
-	if (weatherCodeConditions.accessories[0] !== "none" && $("#temperature").attr("data_f") > 59 && $("#time").attr("data_daynight") === "day" && weatherJSON.wind.speed > 4 && weatherJSON.wind.speed < 12) {
+	if (weatherCodeConditions.accessories[0] == "kite" && $("#temperature").attr("data_f") > 59 && $("#time").attr("data_daynight") === "day" && weatherJSON.wind.speed > 4 && weatherJSON.wind.speed < 12) {
 		weatherCodeConditions.accessories[0] = "kite";
 	} else {
 		weatherCodeConditions.accessories[0] = "none";
